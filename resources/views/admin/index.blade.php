@@ -1,14 +1,14 @@
 {{-- TODO: Se copia lo que está en la documentación "https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Usage" --}}
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Inicio')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1 class="text-center"><b>LIMPIO BE</b></h1>
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+    <h5 class="text-center">¡Hola! <b>{{ Auth::user()->name}}</b> desde aquí podras administrar los productos</h5>
 @stop
 
 @section('css')
