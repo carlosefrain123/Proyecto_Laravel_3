@@ -1,0 +1,4 @@
+===08/01/2024 - SEEDERS
+php artisan make:seeder UserSeeder
+//Se hace después de crear los usuarios en la carpeta Seeder
+php artisan migrate:fresh --seed
