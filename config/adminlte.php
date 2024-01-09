@@ -352,7 +352,7 @@ return [
         ],
         [
             'text' => 'Editar perfil',
-            'url'  => '',
+            'route'  => 'profile.edit',
             'icon' => 'fas fa-cogs',
         ],
     ],
