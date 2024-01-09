@@ -1,0 +1,11 @@
+===08/01/2024 - SEEDERS
+php artisan make:seeder UserSeeder
+//Se hace después de crear los usuarios en la carpeta Seeder
+php artisan migrate:fresh --seed
+===08/01/2024 - AdminLTE
+composer require jeroennoten/laravel-adminlte
+php artisan adminlte:install
+===08/01/2024 - Controladores
+php artisan make:controller UserController
+//En nuestro caso
+php artisan make:controller AdminController
