@@ -3,7 +3,7 @@
 @section('title', 'Editar Perfil')
 
 @section('content_header')
-<h1 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight text-center">
+<h1 class="font-semibold text-xl text-gray-800 leading-tight text-center">
     {{ __('Perfil') }}
 </h1>
 @stop
@@ -32,8 +32,6 @@
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 @stop
 
-@section('js')
-    <script> console.log('Hi!'); </script>
-@stop
