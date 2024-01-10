@@ -46,7 +46,16 @@
                 </div>
             @endif
         </div>
-
+        <div>
+            <x-input-label for="address" :value="__('Dirección')" />
+            <x-text-input id="address" name="address" type="text" class="mt-1 block w-full" :value="old('address', $user->address)" required autofocus autocomplete="address" />
+            <x-input-error class="mt-2" :messages="$errors->get('address')" />
+        </div>
+        <div>
+            <x-input-label for="phone" :value="__('Teléfono')" />
+            <x-text-input id="phone" name="phone" type="text" class="mt-1 block w-full" :value="old('phone', $user->phone)" required autofocus autocomplete="phone" />
+            <x-input-error class="mt-2" :messages="$errors->get('phone')" />
+        </div>
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Guardar') }}</x-primary-button>
 
@@ -55,9 +64,10 @@
                     x-data="{ show: true }"
                     x-show="show"
                     x-transition
+                    {{-- Datos: Es el tiempo que dura, el mensaje --}}
                     x-init="setTimeout(() => show = false, 2000)"
                     class="text-sm text-gray-600 dark:text-gray-400"
-                >{{ __('Saved.') }}</p>
+                >{{ __('Datos guardados correctamente.') }}</p>
             @endif
         </div>
     </form>
