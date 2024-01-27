@@ -12,10 +12,12 @@ class SpecialityController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $filterValue=$request->input('filterValue');
+        $specialitiesFilter=Speciality::where('name','LIKE','%'.$filterValue.'%');
         //Acá es para limitar los datos en el CRUD
-        $specialities=Speciality::simplePaginate(5);
+        $specialities=$specialitiesFilter->simplePaginate(5);
         return view('specialities.index',[
             'specialities' => $specialities,
         ]);
