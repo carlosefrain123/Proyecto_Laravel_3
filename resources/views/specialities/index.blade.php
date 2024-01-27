@@ -54,7 +54,7 @@
         </table>
         <br>
         <div class="text-center">
-            {{$specialities->links()}}
+            {{$specialities->appends(["filterValue"=>$filterValue])->links()}}
         </div>
     </div>
 @stop

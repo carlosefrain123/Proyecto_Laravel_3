@@ -12,6 +12,7 @@ class SpecialityController extends Controller
     /**
      * Display a listing of the resource.
      */
+    //TODOS: Se agrega que solo busque lo que quieres
     public function index(Request $request)
     {
         $filterValue=$request->input('filterValue');
@@ -20,6 +21,7 @@ class SpecialityController extends Controller
         $specialities=$specialitiesFilter->simplePaginate(5);
         return view('specialities.index',[
             'specialities' => $specialities,
+            'filterValue' => $filterValue,
         ]);
     }
 
