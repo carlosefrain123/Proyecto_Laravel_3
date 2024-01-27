@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SpecialityController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,5 +33,7 @@ Route::middleware('auth')->group(function () {
 });
 //TODO: Prácticamente tiene lo mismo de AdminController.php
 
+//TODO: Rutas Especialidades
+Route::get('/specialities',[SpecialityController::class,'index'])->name('specialities.index');
 
 require __DIR__.'/auth.php';

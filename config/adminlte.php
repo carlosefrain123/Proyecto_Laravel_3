@@ -320,9 +320,10 @@ return [
             'label_color' => 'success',
         ],
         ['header' => 'PANEL'],
+        //TODO: Se cambia la ruta de especialidades
         [
-            'text' => 'Especailidades',
-            'url'  => '',
+            'text' => 'Especialidades',
+            'route'  => 'specialities.index',
             'icon' => 'fas fa-list-alt',
         ],
         [
