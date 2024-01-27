@@ -26,16 +26,20 @@
                     <tr>
                         <td><b>{{$speciality->id}}</b></td>
                         <td>{{$speciality->name}}</td>
-                        <td width="5px|">
+                        <td width="5px">
                             <a href="#" class="btn btn-primary btn-sm mb-2">Editar</a>
                         </td>
-                        <td width="5px|">
+                        <td width="5px">
                             <a href="#" class="btn btn-danger btn-sm mb-2">Eliminar</a>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
+        <br>
+        <div class="text-center">
+            {{$specialities->links()}}
+        </div>
     </div>
 @stop
 

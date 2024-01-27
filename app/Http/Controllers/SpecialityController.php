@@ -14,7 +14,8 @@ class SpecialityController extends Controller
      */
     public function index()
     {
-        $specialities=Speciality::all();
+        //Acá es para limitar los datos en el CRUD
+        $specialities=Speciality::simplePaginate(5);
         return view('specialities.index',[
             'specialities' => $specialities,
         ]);
