@@ -14,7 +14,10 @@ class SpecialityController extends Controller
      */
     public function index()
     {
-        return view('specialities.index');
+        $specialities=Speciality::all();
+        return view('specialities.index',[
+            'specialities' => $specialities,
+        ]);
     }
 
     /**
