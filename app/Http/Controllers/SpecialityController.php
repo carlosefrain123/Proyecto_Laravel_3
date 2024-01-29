@@ -30,7 +30,7 @@ class SpecialityController extends Controller
      */
     public function create()
     {
-        //
+        return view('specialities.create');
     }
 
     /**

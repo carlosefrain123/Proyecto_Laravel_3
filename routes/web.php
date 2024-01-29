@@ -35,5 +35,7 @@ Route::middleware('auth')->group(function () {
 
 //TODO: Rutas Especialidades
 Route::get('/specialities',[SpecialityController::class,'index'])->name('specialities.index');
+//TODO: Rutas Especialidades de Create
+Route::get('/specialities/create',[SpecialityController::class,'create'])->name('specialities.create');//(1)
 
 require __DIR__.'/auth.php';
