@@ -10,7 +10,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <form action="#" method="post">
+            <form action="{{route('specialities.store')}}" method="post">
                 @csrf
                 <div class="form-group row">
                     <label for="name" class="col-sm-2 col-form-label">Nombre de Especialidad</label>

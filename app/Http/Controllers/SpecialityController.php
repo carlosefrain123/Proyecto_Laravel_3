@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Speciality;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SpecialityRequest;
 use Illuminate\Http\Request;
 
 //TODO: Comando de creación de Controller: "php artisan make:controller SpecialityController --model=Speciality"
@@ -36,10 +37,18 @@ class SpecialityController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
-    }
+    public function store(SpecialityRequest $request)
+{
+    // Obtener todos los datos del formulario excepto _token
+    $specialityData = $request->except('_token');
+
+    // Guardar los datos
+    Speciality::create($specialityData);
+
+    return redirect()->route('specialities.index')
+        ->with('success-create', 'Especialidad agregada con éxito');
+}
+
 
     /**
      * Display the specified resource.

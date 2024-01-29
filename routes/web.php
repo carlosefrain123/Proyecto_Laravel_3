@@ -37,5 +37,6 @@ Route::middleware('auth')->group(function () {
 Route::get('/specialities',[SpecialityController::class,'index'])->name('specialities.index');
 //TODO: Rutas Especialidades de Create
 Route::get('/specialities/create',[SpecialityController::class,'create'])->name('specialities.create');//(1)
-
+//TODO: Rutas Especialidad de Store
+Route::post('/specialities',[SpecialityController::class,'store'])->name('specialities.store');//(2)
 require __DIR__.'/auth.php';
