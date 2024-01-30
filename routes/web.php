@@ -44,4 +44,5 @@ require __DIR__.'/auth.php';
 Route::get('/specialities/{speciality}/edit',[SpecialityController::class,'edit'])->name('specialities.edit');//(1)
 //TODO: Rutas Especialidad de update
 Route::put('/specialities/{speciality}', [SpecialityController::class, 'update'])->name('specialities.update');
-
+//TODO: Rutas Especialidad de destroy
+Route::delete('/specialities/{speciality}', [SpecialityController::class, 'destroy'])->name('specialities.destroy');

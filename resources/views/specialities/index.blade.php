@@ -16,6 +16,10 @@
     <div class="alert alert-success text-center">
         {{session('success-update')}}
     </div>
+    @elseif(session('success-delete'))
+    <div class="alert alert-warning text-center">
+        {{session('success-delete')}}
+    </div>
     @endif
     <div class="card">
         <div class="card-header container">
@@ -56,7 +60,7 @@
                                 <a href="{{route('specialities.edit',$speciality)}}" class="btn btn-primary btn-sm mb-2">Editar</a>
                             </td>
                             <td width="5px">
-                                <a href="#" class="btn btn-danger btn-sm mb-2">Eliminar</a>
+                                <a href="{{route('specialities.destroy',$speciality)}}" class="btn btn-danger btn-sm mb-2">Eliminar</a>
                             </td>
                         </tr>
                     @endforeach

@@ -77,13 +77,15 @@ class SpecialityController extends Controller
         return redirect()->action([SpecialityController::class,'index'])
         ->with('success-update', 'Especialidad modificada con éxito');
     }
-    
+
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Speciality $speciality)
     {
-        //
+        $speciality->delete();
+        return redirect()->action([SpecialityController::class,'index'])
+        ->with('success-update', 'Especialidad eliminada con éxito');
     }
 }
