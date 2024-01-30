@@ -53,17 +53,22 @@
                 {{-- {{$specialities}} --}}
                 <tbody class="text-center">
                     @foreach ($specialities as $speciality)
-                        <tr>
-                            <td><b>{{$speciality->id}}</b></td>
-                            <td>{{$speciality->name}}</td>
-                            <td width="5px">
-                                <a href="{{route('specialities.edit',$speciality)}}" class="btn btn-primary btn-sm mb-2">Editar</a>
-                            </td>
-                            <td width="5px">
-                                <a href="{{route('specialities.destroy',$speciality)}}" class="btn btn-danger btn-sm mb-2">Eliminar</a>
-                            </td>
-                        </tr>
-                    @endforeach
+    <tr>
+        <td><b>{{$speciality->id}}</b></td>
+        <td>{{$speciality->name}}</td>
+        <td width="5px">
+            <a href="{{route('specialities.edit',$speciality)}}" class="btn btn-primary btn-sm mb-2">Editar</a>
+        </td>
+        <td width="5px">
+            <form action="{{route('specialities.destroy', $speciality)}}" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar esta especialidad?')">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger btn-sm mb-2">Eliminar</button>
+            </form>
+        </td>
+    </tr>
+@endforeach
+
                 </tbody>
             </table>
             <br>

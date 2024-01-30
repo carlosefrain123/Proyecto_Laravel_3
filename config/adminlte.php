@@ -325,6 +325,7 @@ return [
             'text' => 'Especialidades',
             'route'  => 'specialities.index',
             'icon' => 'fas fa-list-alt',
+            'active'=>['specialities*']
         ],
         [
             'text' => 'Doctores',
