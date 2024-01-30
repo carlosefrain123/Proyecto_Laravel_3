@@ -63,7 +63,7 @@ class SpecialityController extends Controller
      */
     public function edit(Speciality $speciality)
     {
-        //
+        return view('specialities.edit',compact('speciality'));
     }
 
     /**

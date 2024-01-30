@@ -40,3 +40,5 @@ Route::get('/specialities/create',[SpecialityController::class,'create'])->name(
 //TODO: Rutas Especialidad de Store
 Route::post('/specialities',[SpecialityController::class,'store'])->name('specialities.store');//(2)
 require __DIR__.'/auth.php';
+//TODO: Rutas Especialidad de edit
+Route::get('/specialities/{speciality}/edit',[SpecialityController::class,'edit'])->name('specialities.edit');//(1)
