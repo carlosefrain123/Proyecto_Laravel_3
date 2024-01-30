@@ -42,3 +42,5 @@ Route::post('/specialities',[SpecialityController::class,'store'])->name('specia
 require __DIR__.'/auth.php';
 //TODO: Rutas Especialidad de edit
 Route::get('/specialities/{speciality}/edit',[SpecialityController::class,'edit'])->name('specialities.edit');//(1)
+//TODO: Rutas Especialidad de update
+Route::put('/specialities/{speciality}', [SpecialityController::class, 'update'])->name('specialities.update');

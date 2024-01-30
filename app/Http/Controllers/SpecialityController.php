@@ -40,12 +40,12 @@ class SpecialityController extends Controller
     public function store(SpecialityRequest $request)
 {
     // Obtener todos los datos del formulario excepto _token
-    $specialityData = $request->except('_token');
+    $speciality = $request->except('_token');
 
     // Guardar los datos
-    Speciality::create($specialityData);
+    Speciality::create($speciality);
 
-    return redirect()->route('specialities.index')
+    return redirect()->action([SpecialityController::class,'index'])
         ->with('success-create', 'Especialidad agregada con éxito');
 }
 
@@ -69,9 +69,13 @@ class SpecialityController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Speciality $speciality)
+    public function update(SpecialityRequest $request, Speciality $speciality)
     {
-        //
+        $speciality->update([
+            'name' => $request->name,
+        ]);
+        return redirect()->action([SpecialityController::class,'index'])
+        ->with('success-update', 'Especialidad modificada con éxito');
     }
 
     /**

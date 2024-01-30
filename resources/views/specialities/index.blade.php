@@ -12,6 +12,10 @@
     <div class="alert alert-primary text-center">
         {{session('success-create')}}
     </div>
+    @elseif(session('success-update'))
+    <div class="alert alert-success text-center">
+        {{session('success-update')}}
+    </div>
     @endif
     <div class="card">
         <div class="card-header container">
