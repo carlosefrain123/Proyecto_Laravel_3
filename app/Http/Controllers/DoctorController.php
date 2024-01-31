@@ -16,7 +16,7 @@ class DoctorController extends Controller
         //Acá es para limitar los datos en el CRUD
         $doctors=$doctorsFilter->simplePaginate(5);
         return view('doctors.index',[
-            'specialities' => $doctors,
+            'doctors' => $doctors,
             'filterValue' => $filterValue,
         ]);
     }
