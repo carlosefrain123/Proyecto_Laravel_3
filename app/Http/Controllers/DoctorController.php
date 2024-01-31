@@ -12,7 +12,8 @@ class DoctorController extends Controller
     public function index(Request $request)
     {
         $filterValue=$request->input('filterValue');
-        $doctorsFilter=User::where('name','LIKE','%'.$filterValue.'%');
+        $doctorsFilter=User::role('Doctor')
+        ->where('name','LIKE','%'.$filterValue.'%');
         //Acá es para limitar los datos en el CRUD
         $doctors=$doctorsFilter->simplePaginate(5);
         return view('doctors.index',[
