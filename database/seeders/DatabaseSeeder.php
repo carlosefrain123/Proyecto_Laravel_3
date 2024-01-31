@@ -14,6 +14,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        //TODO. Agregamos el "$this->call(RoleSeeder::class);"
+        //TODO: Luego ejecutamos el comando php artisan migrate:fresh --seed
+        $this->call(RoleSeeder::class);
         $this->call(UserSeeder::class);
         Speciality::factory(8)->create();
     }
