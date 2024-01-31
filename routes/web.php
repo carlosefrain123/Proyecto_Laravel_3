@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SpecialityController;
 use Illuminate\Support\Facades\Route;
@@ -46,3 +47,6 @@ Route::get('/specialities/{speciality}/edit',[SpecialityController::class,'edit'
 Route::put('/specialities/{speciality}', [SpecialityController::class, 'update'])->name('specialities.update');
 //TODO: Rutas Especialidad de destroy
 Route::delete('/specialities/{speciality}', [SpecialityController::class, 'destroy'])->name('specialities.destroy');
+//*************** */
+//TODO: Rutas Doctor
+Route::get('/doctors',[DoctorController::class,'index'])->name('doctors.index');

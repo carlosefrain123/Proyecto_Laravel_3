@@ -329,8 +329,9 @@ return [
         ],
         [
             'text' => 'Doctores',
-            'url'  => '',
+            'route'  => 'doctors.index',
             'icon' => 'fas fa-user-md',
+            'active'=>['doctors*']
         ],
         [
             'text' => 'Pacientes',
