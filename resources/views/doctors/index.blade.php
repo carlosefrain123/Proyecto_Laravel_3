@@ -25,7 +25,7 @@
         <div class="card-header container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <a href="#" class="btn btn-primary btn-sm mb-2"><b>Agregar Doctor</b></a>
+                    <a href="{{route('doctors.create')}}" class="btn btn-primary btn-sm mb-2"><b>Agregar Doctor</b></a>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <form action="{{route('doctors.index')}}" method="GET">

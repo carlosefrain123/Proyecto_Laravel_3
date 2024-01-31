@@ -21,4 +21,9 @@ class DoctorController extends Controller
             'filterValue' => $filterValue,
         ]);
     }
+    public function create()
+    {
+        //TODO: Retorna la vista
+        return view('doctors.create');
+    }
 }
