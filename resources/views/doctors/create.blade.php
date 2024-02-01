@@ -26,7 +26,7 @@
                 <div class="form-group row">
                     <label for="specialities" class="col-sm-1 col-form-label">Especialidades:</label>
                     <div class="col-sm-11">
-                        <select name="specialities" class="form-control">
+                        <select name="specialities[]" class="form-control js-example-basic-multiple" multiple="multiple">
                             @foreach ($specialities as $speciality)
                                 <option value="{{$speciality->id}}">{{$speciality->name}}</option>
                             @endforeach
@@ -79,7 +79,20 @@
         </div>
     </div>
 @stop
+@section('css')
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+@stop
 
+@section('js')
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        $('.js-example-basic-multiple').select2({
+            theme: "classic"
+        });
+    });
+    </script>
+@stop
 
 
 
