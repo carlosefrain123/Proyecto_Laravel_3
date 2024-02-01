@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Speciality;
 use App\Models\User;
 use Illuminate\Http\Request;
 /**TODO: Comando: $ php artisan make:controller
@@ -23,7 +24,8 @@ class DoctorController extends Controller
     }
     public function create()
     {
+        $specialities=Speciality::all();
         //TODO: Retorna la vista
-        return view('doctors.create');
+        return view('doctors.create',compact('specialities'));
     }
 }
