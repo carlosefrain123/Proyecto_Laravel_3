@@ -14,7 +14,7 @@ use Spatie\Permission\Models\Role;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable,HasRoles;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -50,9 +50,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'password' => 'hashed',
     ];
     //TODO: Relación de muchos a muchos con specialties
-    public function Speciality(): BelongsToMany
+    public function specialities(): BelongsToMany
     {
-        return $this->belongsToMany(Role::class);
+        return $this->belongsToMany(Speciality::class);
     }
-
 }

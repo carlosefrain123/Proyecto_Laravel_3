@@ -10,7 +10,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <form action="{{route('specialities.store')}}" method="post">
+            <form action="{{route('doctors.store')}}" method="post">
                 @csrf
                 <div class="form-group row">
                     <label for="name" class="col-sm-1 col-form-label">Nombre</label>
@@ -71,8 +71,25 @@
                         @enderror
                     </div>
                 </div>
+                <div class="form-group row">
+                    <label for="password" class="col-sm-1 col-form-label">Contraseña:</label>
+                    <div class="col-sm-11">
+                        <input type="password" class="form-control" id="password" name="password" value="">
+                        @error('password')
+                            <span class="text-danger">
+                                <span>*{{$message}}</span>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="password_confirmation" class="col-sm-1 col-form-label">Confirmar Contraseña:</label>
+                    <div class="col-sm-11">
+                        <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" value="">
+                    </div>
+                </div>
                 <div class="text-center">
-                    <input type="submit" value="crear especialidad" class="btn btn-primary">
+                    <input type="submit" value="Crear Doctor" class="btn btn-primary">
                     <a href="{{route('doctors.index')}}" class="btn btn-danger">Cancelar</a>
                 </div>
             </form>

@@ -52,3 +52,5 @@ Route::delete('/specialities/{speciality}', [SpecialityController::class, 'destr
 Route::get('/doctors',[DoctorController::class,'index'])->name('doctors.index');
 //TODO: Rutas DOctor de Create
 Route::get('/doctors/create',[DoctorController::class,'create'])->name('doctors.create');//(1)
+//TODO: Rutas Especialidad de Store
+Route::post('/doctors',[DoctorController::class,'store'])->name('doctors.store');//(2)
