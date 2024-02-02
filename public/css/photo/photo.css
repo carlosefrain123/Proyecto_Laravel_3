@@ -1,0 +1,13 @@
+.img-panel {
+    height: 350px;
+    width: 350px;
+}
+
+.img-boton {
+    height: 40px;
+    width: 40px;
+}
+
+.no-border {
+    border: none;
+}
