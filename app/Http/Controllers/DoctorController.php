@@ -44,5 +44,8 @@ class DoctorController extends Controller
         return redirect()->action([DoctorController::class,'index'])
             ->with('success-create', 'Doctor agregado con éxito');
     }
-
+    public function show(User $doctor){
+        $doctor=User::find($doctor->id);
+        return view('doctors.show',compact('doctor'));
+    }
 }

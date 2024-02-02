@@ -61,7 +61,7 @@
                             <td>{{$doctor->email}}</td>
                             <td>{{$doctor->phone}}</td>
                             <td width="2px">
-                                <a href="#" class="btn btn-primary btn-sm mb-2">Mostrar</a>
+                                <a href="{{route('doctors.show',$doctor)}}" class="btn btn-success btn-sm mb-2">Mostrar</a>
                             </td>
                             <td width="5px">
                                 <a href="#" class="btn btn-primary btn-sm mb-2">Editar</a>
