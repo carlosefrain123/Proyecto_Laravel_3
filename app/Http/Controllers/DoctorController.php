@@ -33,7 +33,7 @@ class DoctorController extends Controller
 
         // Crear un nuevo usuario con los datos del formulario
         $user = User::create($doctorData);
-
+        $user->roles()->sync(2);
         // Adjuntar las especialidades al usuario recién creado
         if ($request->has('specialities')) {
             $user->specialities()->attach($request->input('specialities'));
