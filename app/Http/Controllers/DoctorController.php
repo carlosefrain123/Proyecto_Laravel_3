@@ -46,6 +46,7 @@ class DoctorController extends Controller
     }
     public function show(User $doctor){
         $doctor=User::find($doctor->id);
-        return view('doctors.show',compact('doctor'));
+        $specialities = $doctor->specialities()->select('name')->get();
+        return view('doctors.show',compact('doctor','specialities'));
     }
 }

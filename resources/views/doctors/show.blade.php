@@ -10,6 +10,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
+                    <th>Especialidades</th>
                     <th>Correo</th>
                     <th>Celular</th>
                     <th>Dirección</th>
@@ -21,6 +22,16 @@
                 <tr>
                     <td>{{ $doctor->id }}</td>
                     <td>{{ $doctor->name }}</td>
+                    <td>
+                        @foreach ($specialities as $speciality)
+                            {{ $speciality->name }}
+                            {{--Sirve, para ver si tiene datos
+                                {{ $specialities }} --}}
+                            @if (!$loop->last)
+                                {{ ', ' }}
+                            @endif
+                        @endforeach
+                    </td>
                     <td>{{ $doctor->email }}</td>
                     <td>{{ $doctor->phone }}</td>
                     <td>{{ $doctor->address }}</td>
