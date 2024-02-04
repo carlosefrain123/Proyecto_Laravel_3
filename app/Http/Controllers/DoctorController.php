@@ -49,4 +49,7 @@ class DoctorController extends Controller
         $specialities = $doctor->specialities()->select('name')->get();
         return view('doctors.show',compact('doctor','specialities'));
     }
+    public function edit(User $doctor){
+        return view('doctors.edit',compact('doctor'));
+    }
 }

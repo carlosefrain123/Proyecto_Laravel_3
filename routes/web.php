@@ -57,4 +57,5 @@ Route::post('/doctors',[DoctorController::class,'store'])->name('doctors.store')
 //TODO: Rutas DOCTOR de show
 //TODO: Rutas DOCTOR de show
 Route::get('/doctors/{doctor}',[DoctorController::class,'show'])->name('doctors.show');//(2)
-
+//TODO: Rutas Especialidad de edit
+Route::get('/doctors/{doctor}/edit',[DoctorController::class,'edit'])->name('doctors.edit');//(1)
