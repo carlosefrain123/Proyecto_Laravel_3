@@ -50,6 +50,8 @@ class DoctorController extends Controller
         return view('doctors.show',compact('doctor','specialities'));
     }
     public function edit(User $doctor){
-        return view('doctors.edit',compact('doctor'));
+        $specialities = Speciality::all(); // Obtén todas las especialidades
+        return view('doctors.edit', compact('doctor', 'specialities'));
     }
+
 }
