@@ -16,7 +16,7 @@
                 <div class="form-group row">
                     <label for="name" class="col-sm-1 col-form-label">Nombre</label>
                     <div class="col-sm-11">
-                        <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
+                        <input type="text" class="form-control" id="name" name="name" value="{{old('name',$doctor->name)}}">
                         @error('name')
                             <span class="text-danger">
                                 <span>*{{$message}}</span>
@@ -27,9 +27,9 @@
                 <div class="form-group row">
                     <label for="specialities" class="col-sm-1 col-form-label">Especialidades:</label>
                     <div class="col-sm-11">
-                        <select name="specialities[]" class="form-control js-example-basic-multiple" multiple="multiple">
+                        <select name="specialities[]" id="specialities"  class="form-control js-example-basic-multiple" multiple="multiple">
                             @foreach ($specialities as $speciality)
-                                <option value="{{$speciality->id}}">{{$speciality->name}}</option>
+                                <option value="{{$speciality->id}}" {{in_array($speciality->id,old('specialities',[]))?'selected':''}}>{{$speciality->name}}</option>
                             @endforeach
                         </select>
                         @error('specialities')
@@ -42,7 +42,7 @@
                 <div class="form-group row">
                     <label for="email" class="col-sm-1 col-form-label">Correo:</label>
                     <div class="col-sm-11">
-                        <input type="email" class="form-control" id="email" name="email" value="{{old('email')}}">
+                        <input type="email" class="form-control" id="email" name="email" value="{{old('email',$doctor->email)}}">
                         @error('email')
                             <span class="text-danger">
                                 <span>*{{$message}}</span>
@@ -53,7 +53,7 @@
                 <div class="form-group row">
                     <label for="address" class="col-sm-1 col-form-label">Dirección:</label>
                     <div class="col-sm-11">
-                        <input type="text" class="form-control" id="address" name="address" value="{{old('address')}}">
+                        <input type="text" class="form-control" id="address" name="address" value="{{old('address',$doctor->address)}}">
                         @error('address')
                             <span class="text-danger">
                                 <span>*{{$message}}</span>
@@ -64,7 +64,7 @@
                 <div class="form-group row">
                     <label for="phone" class="col-sm-1 col-form-label">Celular:</label>
                     <div class="col-sm-11">
-                        <input type="text" class="form-control" id="phone" name="phone" value="{{old('phone')}}">
+                        <input type="text" class="form-control" id="phone" name="phone" value="{{old('phone',$doctor->phone)}}">
                         @error('phone')
                             <span class="text-danger">
                                 <span>*{{$message}}</span>
@@ -86,6 +86,10 @@
 
 @section('js')
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(()=>{});
+        $('#specialities').val(@json($ids_specialities));
+    </script>
     <script>
         $(document).ready(function() {
         $('.js-example-basic-multiple').select2({

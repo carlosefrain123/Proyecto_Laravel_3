@@ -51,7 +51,9 @@ class DoctorController extends Controller
     }
     public function edit(User $doctor){
         $specialities = Speciality::all(); // Obtén todas las especialidades
-        return view('doctors.edit', compact('doctor', 'specialities'));
+        $ids_specialities = $doctor->specialities()->pluck('specialities.id');
+
+        return view('doctors.edit', compact('doctor', 'specialities', 'ids_specialities'));
     }
 
 }
