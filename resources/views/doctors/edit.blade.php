@@ -10,7 +10,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <form action="{{route('doctors.store')}}" method="post">
+            <form action="{{route('doctors.update',$doctor)}}" method="post">
                 @csrf
                 @method('PUT'){{-- Para editar datos --}}
                 <div class="form-group row">

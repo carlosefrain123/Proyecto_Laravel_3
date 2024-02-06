@@ -55,5 +55,23 @@ class DoctorController extends Controller
 
         return view('doctors.edit', compact('doctor', 'specialities', 'ids_specialities'));
     }
+    public function update(DoctorRequest $request, Speciality $doctor)
+    {
+        $doctor=User::find($doctor->id);
+        if (!$doctor) {
+            abort(404,'Doctor no encontrado');
+        }else{
+            $doctor->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'address' => $request->address,
+                'phone' => $request->phone,
+            ]);
+            $doctor->specialities()->sync($request->input('specialities'));
+            return redirect()->action([DoctorController::class,'index'])
+        ->with('success-update', 'Doctor modificado con éxito');
+        }
+
+    }
 
 }
